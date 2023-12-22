@@ -1,0 +1,23 @@
+https://leetcode.com/problems/maximum-sum-with-exactly-k-elements/description/
+
+class Solution {
+    public int maximizeSum(int[] nums, int k) {
+        
+        int max = 0;
+
+        for(int num : nums) {
+            if(max < num) max = num;
+        }
+
+        int maxsum = 0;
+        while(k > 0) {
+            maxsum += max;
+            max = max + 1;
+                        
+            k--;
+        }
+
+        
+        return maxsum;
+    }
+}
